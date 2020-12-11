@@ -1,0 +1,32 @@
+public class Main {
+
+   public static void main(String[ ] args) {
+
+      Node<MyClass> headMyClass = new Node<MyClass>(new MyClass(0,0), null, null);
+
+      for (int i = 1; i < 6; i++) { 
+         Node<MyClass> t = new Node<MyClass>(new MyClass(i,-i), headMyClass, headMyClass.getNext( )); 
+         headMyClass.setNext(t);
+      }
+      
+      
+      Node<MyClass> pointer = headMyClass;
+      Node<MyClass> dummy = pointer;
+      
+      MyClass holder1;
+      MyClass holder2;
+	      for(int i = 1; i<6; i++) {
+	    	  dummy = dummy.getNext();
+	    	  holder1 = pointer.getData();
+	    	  holder2 = dummy.getData();
+	    	  if(holder1.compareTo(holder2) == -1) {
+	    		  pointer.setNext(dummy);
+	    	  }
+	      }
+      
+      while (headMyClass != null) {
+         System.out.println(""+headMyClass.getData( ));
+         headMyClass = headMyClass.getNext( );
+      }
+   }
+}

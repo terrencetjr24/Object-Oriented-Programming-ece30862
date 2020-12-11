@@ -1,0 +1,14 @@
+#makefile
+
+TARGET = hw5a
+GPP = gpp
+
+SRCS = *.cpp
+
+OBJS = $(SRCS:%.cpp=%.o)
+
+$(TARGET): $(OBJS)
+	$(GPP) $(OBJS) -o $(TARGET)
+
+run: $(TARGET)
+	./$(TARGET)

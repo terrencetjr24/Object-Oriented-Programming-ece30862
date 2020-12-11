@@ -1,0 +1,35 @@
+Page 5:
+     Status of buf: EMPTY
+     Status of lock's wait queue: C1
+     Status of lock's blocked queue: EMPTY
+Page 6:
+     Status of buf: c
+     Status of lock's wait queue: C1
+     Status of lock's blocked queue: C2 
+Page 7:
+     There is not a character for C1 to get.
+     C1 will be placed back into the wait queue.
+     C1 would have attempted to remove a value from the buf when it was empty
+
+Page 9:
+     Status of buf: c
+     Status of lock's wait queue: P2, P3
+     Status of lock's blocked queue: EMPTY
+Page 10:
+     Status of buf: EMPTY
+     Status of lock's wait queue: P2, P3, C2, C3
+     Status of lock's blocked queue: 
+Page 11:
+     Status of buf: EMPTY
+     Status of lock's wait queue: P3, C2, C3
+     Status of lock's blocked queue: P2
+Page 12:
+     Status of buf: d
+     Status of lock's wait queue: P3, C2, C3
+     Status of lock's blocked queue: EMPTY
+Page 13:
+     Status of buf: d
+     Status of lock's wait queue: P3, C2, C3
+     Status of lock's blocked queue: EMPTY
+     Yes, any thread can be woken by another notify
+     Then all three threads would have been awaken, and placed into the blocked queue

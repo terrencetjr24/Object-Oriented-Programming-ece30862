@@ -1,0 +1,45 @@
+public class Node <T>{ 
+   private T data;
+   private Node prev; 
+   private Node next; 
+
+   public Node(T data, Node prev, Node next) {
+      this.data = data;
+      this.prev = prev;
+      this.next = next;
+   } 
+   public T getData( ) {
+      return data;
+   }
+  public void setNext(Node nextP) {
+     next = nextP;
+   }
+   void setPrev(Node prevP) {
+      prev = prevP;
+   }
+   public Node getNext( ) {
+      return next;
+   }
+   Node getPrev( ) {
+      return prev;
+   }
+   public void comp(Node<T> ogNext) {
+	   T current = this.getData();
+	   T holder = ogNext.getData();
+	   Node <T> nextHolder;
+	   Node <T> prevHolder;
+	   //If "this" is greater than the thing (switch the order to Xthis_prevX -> thing -> this -> Xthing_nextX
+	   if(((MyClass) current).compareTo(holder) == -1) {
+		   nextHolder = ogNext.getNext();
+		   prevHolder = this.getPrev();
+		   
+		   prevHolder.setNext(ogNext);
+		   ogNext.setPrev(prevHolder);
+		   ogNext.setNext(this);
+		   this.setPrev(ogNext);
+		   this.setNext(nextHolder);
+		   nextHolder.setPrev(this);
+	   }
+   }
+}
+

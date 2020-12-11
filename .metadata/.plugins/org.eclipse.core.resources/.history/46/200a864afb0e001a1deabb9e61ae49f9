@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+public class compiler {
+    public static void main(String[] args) {
+        ArrayList<String> source = new ArrayList<>();
+        ArrayList<memObject> memory = new ArrayList<>();
+        ArrayList<Integer> stack = new ArrayList<Integer>();
+
+		BufferedReader reader;
+		try {
+			reader = new BufferedReader(new FileReader(
+					args[0]));
+			String line = reader.readLine();
+			while (line != null) {
+                //System.out.println(line);
+				source.add(line);
+                line = reader.readLine();
+			}
+			reader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+        }
+        
+        for(String str: source) {
+            String[] words = str.split(" ");
+            decode(words);//or something
+        }
+    }
+}

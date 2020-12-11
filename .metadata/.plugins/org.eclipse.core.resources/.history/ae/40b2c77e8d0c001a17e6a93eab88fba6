@@ -1,0 +1,31 @@
+public class Node <T>{ 
+   private T data;
+   private Node prev; 
+   private Node next; 
+
+   public Node(T data, Node prev, Node next) {
+      this.data = data;
+      this.prev = prev;
+      this.next = next;
+   } 
+
+   public T getData( ) {
+      return data;
+   }
+
+  public void setNext(Node nextP) {
+     next = nextP;
+   }
+
+   void setPrev(Node prevP) {
+      prev = prevP;
+   }
+
+   public Node getNext( ) {
+      return next;
+   }
+
+   Node getPrev( ) {
+      return prev;
+   }
+}

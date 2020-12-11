@@ -1,0 +1,46 @@
+public class Main {
+
+   public static void main(String[ ] args) {
+
+      Node<MyClass> headMyClass = new Node<MyClass>(new MyClass(0,0), null, null);
+
+      for (int i = 1; i < 6; i++) { 
+         Node<MyClass> t = new Node<MyClass>(new MyClass(i,-i), headMyClass, headMyClass.getNext( )); 
+         headMyClass.setNext(t);
+      }
+      
+      
+      Node<MyClass> pointer = headMyClass;
+      Node<MyClass> dummy = pointer.getNext();
+      
+      Node<MyClass> pholder = dummy;
+      MyClass dholder = dummy.getData();
+      
+      Node<MyClass> oldNext = pointer;
+      
+      MyClass holder2;
+      for(int z = 6; z>1; z--) {
+	      for(int i = 1; i<z; i++) {
+	    	  
+	    	  dummy = dummy.getNext();
+	    	  holder2 = dummy.getData();
+	    	  
+	    	  if(dholder.compareTo(holder2) == -1) {
+	    		  pholder = dummy;
+	    		  dholder = holder2;
+	    	  }
+	      }
+	      //reassignments done after going through whole loop
+	      oldNext = pointer.getNext();
+	      pointer.setNext(pholder);
+	      pointer = pointer.getNext();
+	      pointer.setNext(oldNext);
+	      dummy = pointer.getNext();
+	      dholder = dummy.getData();
+      }   
+      while (headMyClass != null) {
+         System.out.println(""+headMyClass.getData( ));
+         headMyClass = headMyClass.getNext( );
+      }
+   }
+}

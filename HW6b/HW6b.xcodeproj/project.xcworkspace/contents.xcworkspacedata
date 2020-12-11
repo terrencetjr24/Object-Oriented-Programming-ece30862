@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:../HW6b/Base.h">
+   </FileRef>
+   <FileRef
+      location = "group:../HW6b/Derived.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:../HW6b/Derived.h">
+   </FileRef>
+   <FileRef
+      location = "group:../HW6b/Base.cpp">
+   </FileRef>
+   <FileRef
+      location = "self:">
+   </FileRef>
+</Workspace>
